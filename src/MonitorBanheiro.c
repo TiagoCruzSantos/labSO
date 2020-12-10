@@ -6,7 +6,7 @@ pthread_cond_t corintianoNaFila = PTHREAD_COND_INITIALIZER;
 pthread_cond_t palmeirenseNoBanheiro = PTHREAD_COND_INITIALIZER;
 pthread_cond_t corintianoNoBanheiro = PTHREAD_COND_INITIALIZER;
 int qtdNoBanheiro = 0;
-int palcor = -1;//0 = palmeirense no banheiro, 1 = corintiano no banheiro
+int palcor = -1;//0 = palmeirense no banheiro, 1 = corintiano no banheiro, -1 ninguem no banheiro
 void corintianoQuerEntrar(){
     pthread_mutex_lock(&mutex);
     if(palcor == 0){
@@ -24,6 +24,7 @@ void corintianoSai(){
     pthread_mutex_lock(&mutex);
     qtdNoBanheiro--;
     if(qtdNoBanheiro <= 0){
+        palcor = -1;
         pthread_cond_signal(&corintianoNoBanheiro);
     }
     pthread_cond_signal(&banheiroCheio);
@@ -47,6 +48,7 @@ void palmeirenseSai(){
     pthread_mutex_lock(&mutex);
     qtdNoBanheiro--;
     if(qtdNoBanheiro <= 0){
+        palcor = -1;
         pthread_cond_signal(&palmeirenseNoBanheiro);
     }
     pthread_cond_signal(&banheiroCheio);

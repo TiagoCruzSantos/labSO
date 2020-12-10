@@ -3,7 +3,7 @@
 #include <pthread.h>
 
 void corintianoQuerEntrar();
-void conrintianoSai();
+void corintianoSai();
 void palmeirenseQuerEntrar();
 void palmeirenseSai();
 

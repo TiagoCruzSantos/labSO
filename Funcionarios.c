@@ -13,7 +13,7 @@ void *thread_corintiano(void *id)
         sleep(3);
         corintianoSai();
         printf("Eu sou corintiano-%d: ... Estou aliviado! Vou trabalhar!\n", ID);
-        sleep(5);
+        sleep(10);
     }
 }
 
@@ -24,10 +24,10 @@ void *thread_palmeirense(void *id)
     {
         palmeirenseQuerEntrar();
         printf("Eu sou palmeirense-%d: ... UFA! Entrei no banheiro!\n", ID);
-        sleep(3);
+        sleep(5);
         palmeirenseSai();
         printf("Eu sou palmeirense-%d: ... Estou aliviado! Vou trabalhar!\n", ID);
-        sleep(5);
+        sleep(11);
     }
 }
 

@@ -1,7 +1,11 @@
+#Integrantes
+#Tiago da Cruz Santos
+#Atílio Antônio Dadalto
+
 OBJ      := obj
 SRC      := src
 INC      := include
-CFLAGS   := -lm -g -O2 -pthread -Wall -pedantic -Wextra -Wwrite-strings
+CFLAGS   := -lm -g -O2 -pthread
 EXE 	 := labso
 PROJETO  := Funcionarios
 
